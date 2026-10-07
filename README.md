@@ -92,4 +92,10 @@ The documentation makes it a breeze to learn more about the application and the 
 - [ ] Add full-text indexing routines to make blog posts searchable.
 - [ ] Add search form to frontend layout.
 
+## License
+
+Symfoniq is open-sourced software licensed under the [MIT license].
+
 <!--                  That's all folks!                 -->
+
+[mit license]: LICENSE.md
