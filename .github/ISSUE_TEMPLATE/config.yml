@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Support Questions & Other
+    url: https://github.com/sirthxalot/symfoniq/discussions
+    about: 'The issue tracker is not intended to provide help or support. Join a discussion first.'

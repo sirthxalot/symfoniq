@@ -30,7 +30,7 @@ The documentation makes it a breeze to learn more about the application and the 
 
 - [x] Add Symfony web application skeleton.
 - [x] Add artwork, favicon, logo, and social-preview card.
-- [ ] Add default GitHub workflows and issue templates.
+- [x] Add default GitHub workflows and issue templates.
 - [ ] Add documentation and instruction files.
 - [ ] Add code style fixers and editor configuration.
 - [ ] Add profiler and debugging tools.
