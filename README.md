@@ -1,4 +1,8 @@
-# Symfoniq
+<p align="center">
+<a href="https://github.com/sirthxalot/symfoniq" target="_blank">
+<img src="./art/symfoniq-social-preview.png" alt="Symfoniq social preview proudly presented by sirthxalot" />
+</a>
+</p>
 
 ## Introduction
 
@@ -24,8 +28,8 @@ The documentation makes it a breeze to learn more about the application and the 
 
 ### v1.0.0 - The Core
 
-- [ ] Add Symfony web application skeleton.
-- [ ] Add artwork, favicon, logo, and social-preview card.
+- [x] Add Symfony web application skeleton.
+- [x] Add artwork, favicon, logo, and social-preview card.
 - [ ] Add default GitHub workflows and issue templates.
 - [ ] Add documentation and instruction files.
 - [ ] Add code style fixers and editor configuration.
