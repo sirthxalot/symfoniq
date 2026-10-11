@@ -4,6 +4,12 @@
 </a>
 </p>
 
+<p align="center">
+<a href="https://packagist.org/packages/sirthxalot/symfoniq"><img src="https://img.shields.io/packagist/dt/sirthxalot/symfoniq" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/sirthxalot/symfoniq"><img src="https://img.shields.io/packagist/v/sirthxalot/symfoniq" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/sirthxalot/symfoniq"><img src="https://img.shields.io/packagist/l/sirthxalot/symfoniq" alt="License"></a>
+</p>
+
 ## Introduction
 
 Symfoniq lays out a pragmatic approach to developing web applications with Symfony. It is a simple but expressive and elegant demonstration of how to build scalable and robust applications following best practices and design patterns.
@@ -24,77 +30,37 @@ The documentation makes it a breeze to learn more about the application and the 
 
 * **Search**: Includes Meilisearch to index and search blog posts.
 
-## Roadmap
+## Official Documentation
 
-### v1.0.0 - The Core
+Our [official documentation] is the perfect starting point, in
+order to learn how to [install], setup or use Symfoniq from 
+scratch. Whether if you are a beginner or an advanced user does 
+not matter, you will find what you need to know and become a 
+master in no time.
 
-- [x] Add Symfony web application skeleton.
-- [x] Add artwork, favicon, logo, and social-preview card.
-- [x] Add default GitHub workflows and issue templates.
-- [ ] Add documentation and instruction files.
-- [ ] Add code style fixers and editor configuration.
-- [ ] Add profiler and debugging tools.
-- [ ] Add testing tools and default tests.
-- [ ] Add mailer infrastructure and Mailpit configuration.
-- [ ] Add Redis setup for sessions, caching, rate limiter, and messenger.
+## Issue Tracking
 
-### v1.1.0 - Frontend
+The [issue tracker] is meant in order to report bugs, request 
+features or submitting a pull request. But please respect the 
+following restrictions:
 
-- [ ] Add Vite frontend build tool.
-- [ ] Add TailwindCSS utility-first CSS framework.
-- [ ] Add Vue.js progressive JavaScript framework.
-- [ ] Add Twig template engine configuration.
-- [ ] Add TailwindCSS theme setup and base components.
-- [ ] Add Vue.js core components and extensions.
-- [ ] Add homepage including controller and routing.
-- [ ] Add fallback HTTP error pages.
+- Please **do not** report any security vulnerabilities (read [our security policy]).
 
-### v1.2.0 - i18n
+- Please **do not** derail or troll issues. Keep the discussion on topic and
+  respect the opinions of others.
 
-- [ ] Add localized routing strategy.
-- [ ] Add geolocation service.
-- [ ] Add fallback to set language from client browser.
-- [ ] Add translations for the homepage.
-- [ ] Add translations for transactional emails.
-- [ ] Add administration interface to translate strings.
-- [ ] Add Google Cloud Translation API integration.
+- Please **do not** use the issue tracker for personal support requests
+  (use our [discussion forum]).
 
-### v1.3.0 - RBAC
+- Please **do not** open issues or pull requests regarding third party code
+  e.g. Symfony (open them in their respective repositories).
 
-- [ ] Add Symfony security bundle.
-- [ ] Add 403 (forbidden) error page.
-- [ ] Add user storage management and provisioning.
-- [ ] Add role storage management and access mapping.
-- [ ] Add security voters for custom access control logic.
-- [ ] Add session authentication guards for login and logout.
-- [ ] Add token-based forgot password feature.
-- [ ] Add login throttling mechanisms.
+## Contributing
 
-### v1.4.0 - Administration
-
-- [ ] Add administration dashboard.
-- [ ] Add administration user profile.
-- [ ] Add administration settings.
-- [ ] Add theme to administration.
-
-### v1.5.0 - Blogger
-
-- [ ] Add blog post storage management.
-- [ ] Add blog post status workflow engine.
-- [ ] Add REST client service to consume Blogger API.
-- [ ] Add background cron job to fetch remote posts.
-- [ ] Add manual post synchronization button to administration.
-- [ ] Add blog post list view in administration.
-- [ ] Add blog post editing view in administration.
-- [ ] Add version control system to check and mark post updates.
-- [ ] Add frontend landing view to list blog excerpts.
-- [ ] Add frontend detail view to read the full blog post.
-
-### v1.6.0 - Search Engine
-
-- [ ] Add Meilisearch service to Docker Compose configuration.
-- [ ] Add full-text indexing routines to make blog posts searchable.
-- [ ] Add search form to frontend layout.
+Want to get involved? Thanks! We're actively looking for folks
+interested in helping out and there are plenty of ways you can help!
+But, in order to be a part of our community you must follow and respect
+our [code of conduct] and [contribution guideline].
 
 ## License
 
@@ -102,4 +68,11 @@ Symfoniq is open-sourced software licensed under the [MIT license].
 
 <!--                  That's all folks!                 -->
 
+[code of conduct]: https://sirthxalot.github.io/symfoniq/contribute/code-of-conduct
+[contribution guideline]: https://sirthxalot.github.io/symfoniq/contribute
+[discussion forum]: https://github.com/sirthxalot/symfoniq/discussions
+[install]: https://sirthxalot.github.io/symfoniq/guide/1.0/install
+[issue tracker]: https://github.com/sirthxalot/symfoniq/issues
 [mit license]: LICENSE.md
+[official documentation]: https://sirthxalot.github.io/symfoniq
+[our security policy]: https://github.com/sirthxalot/symfoniq/blob/main/.github/SECURITY.md
