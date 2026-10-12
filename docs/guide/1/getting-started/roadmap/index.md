@@ -6,7 +6,7 @@
 - [x] Add artwork, favicon, logo, and social-preview card.
 - [x] Add default GitHub workflows and issue templates.
 - [x] Add documentation and instruction files.
-- [ ] Add code style fixers and editor configuration.
+- [x] Add code style fixers and editor configuration.
 - [ ] Add profiler and debugging tools.
 - [ ] Add testing tools and default tests.
 - [ ] Add mailer infrastructure and Mailpit configuration.

@@ -35,6 +35,26 @@ Checkout the `.editorconfig` file to get more information about the project's de
 
 Ensure that you have activated and installed the [EditorConfig extension] for Visual Studio Code, when coding.
 
+## PHP Code Style Fixing
+
+Don't worry if your code styling isn't perfect! [PHP CS Fixer] will automatically merge any style fixes into the repository after pull requests are merged or pushed on the `main` and `release` branch. This allows us to focus on the content of the contribution and not the code style.
+
+### Check for Fixing
+
+[The `check` command] won’t apply any changes, but will only print analysis result:
+
+```bash
+./vendor/bin/php-cs-fixer check
+```
+
+### Fixing Coding Standard
+
+[The `fix` command] tries to fix as much coding standards problems as possible:
+
+```bash
+./vendor/bin/php-cs-fixer fix
+```
+
 ## Code Deprecation
 
 From time to time, some classes and/or methods are deprecated; that happens when a feature implementation cannot be changed because of backward compatibility issues, but we still want to propose a "better" alternative. In that case, the old implementation can be deprecated. 
@@ -167,6 +187,7 @@ The [profiler] is a powerful development tool that gives detailed information ab
 [editorconfig extension]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
 [editorconfig]: https://editorconfig.org/
 [php cs fixer]: https://cs.symfony.com/
+[php cs fixer]: https://cs.symfony.com/
 [php debug extension for visual studio code]: https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug
 [phpstan]: https://phpstan.org/
 [profiler]: https://symfony.com/doc/current/profiler.html
@@ -175,5 +196,7 @@ The [profiler] is a powerful development tool that gives detailed information ab
 [symfony conventions]: https://symfony.com/doc/current/contributing/code/conventions.html
 [symfony documentation]: https://symfony.com/doc
 [symfony/deprecation-contracts]: https://github.com/symfony/deprecation-contracts
+[the `check` command]: https://cs.symfony.com/doc/usage.html#the-check-command
+[the `fix` command]: https://cs.symfony.com/doc/usage.html#the-fix-command
 [xdebug php extension]: /contribute/dev/setup/#xdebug
 [xdebug]: https://xdebug.org/
