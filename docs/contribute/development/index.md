@@ -109,7 +109,7 @@ sudo apt update
 #### Install PHP and Core Extensions
 
 ```bash
-sudo apt install -y php8.4-cli php8.4-common php8.4-xml php8.4-mbstring php8.4-intl php8.4-pgsql
+sudo apt install -y php8.4-cli php8.4-common php8.4-xml php8.4-mbstring php8.4-intl php8.4-pgsql php8.4-curl
 ```
 
 #### Verify PHP Installation

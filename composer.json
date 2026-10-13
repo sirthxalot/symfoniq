@@ -9,11 +9,17 @@
     "require": {
         "php": ">=8.4",
         "ext-ctype": "*",
+        "ext-curl": "*",
         "ext-iconv": "*",
+        "ext-intl": "*",
+        "ext-mbstring": "*",
         "ext-pcre": "*",
+        "ext-pdo": "*",
+        "ext-pdo_pgsql": "*",
         "ext-session": "*",
         "ext-simplexml": "*",
         "ext-tokenizer": "*",
+        "ext-xml": "*",
         "doctrine/doctrine-bundle": "^3.3",
         "doctrine/doctrine-migrations-bundle": "^4.0",
         "doctrine/orm": "^3.7",
@@ -58,6 +64,7 @@
             "symfony/flex": true,
             "symfony/runtime": true
         },
+        "bin-dir": "bin",
         "bump-after-update": true,
         "sort-packages": true
     },
@@ -109,6 +116,7 @@
     "require-dev": {
         "deptrac/deptrac": "^4.7",
         "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/phpstan": "^2.3",
         "phpunit/phpunit": "^13.4",
         "symfony/browser-kit": "8.1.*",
         "symfony/css-selector": "8.1.*",

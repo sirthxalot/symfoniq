@@ -44,7 +44,7 @@ Don't worry if your code styling isn't perfect! [PHP CS Fixer] will automaticall
 [The `check` command] won’t apply any changes, but will only print analysis result:
 
 ```bash
-./vendor/bin/php-cs-fixer check
+./bin/php-cs-fixer check
 ```
 
 ### Fixing Coding Standard
@@ -52,7 +52,7 @@ Don't worry if your code styling isn't perfect! [PHP CS Fixer] will automaticall
 [The `fix` command] tries to fix as much coding standards problems as possible:
 
 ```bash
-./vendor/bin/php-cs-fixer fix
+./bin/php-cs-fixer fix
 ```
 
 ## Profiling
@@ -68,7 +68,7 @@ Browse the `/_profiler` URL to see all profiles.
 You can run the following command in order to analyse the source code and check for violations:
 
 ```bash
-./vendor/bin/deptrac
+./bin/deptrac
 ```
 
 ## Code Deprecation
