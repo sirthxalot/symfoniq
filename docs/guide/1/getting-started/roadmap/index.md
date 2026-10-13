@@ -7,7 +7,7 @@
 - [x] Add default GitHub workflows and issue templates.
 - [x] Add documentation and instruction files.
 - [x] Add code style fixers and editor configuration.
-- [ ] Add profiler and debugging tools.
+- [x] Add profiler and debugging tools.
 - [ ] Add testing tools and default tests.
 - [ ] Add mailer infrastructure and Mailpit configuration.
 - [ ] Add Redis setup for sessions, caching, rate limiter, and messenger.

@@ -55,6 +55,22 @@ Don't worry if your code styling isn't perfect! [PHP CS Fixer] will automaticall
 ./vendor/bin/php-cs-fixer fix
 ```
 
+## Profiling
+
+The [profiler] is a powerful development tool that gives detailed information about the execution of any request.
+
+Browse the `/_profiler` URL to see all profiles.
+
+## Deptrac
+
+[Deptrac] is a static code analysis tool for PHP that helps you communicate, visualize and enforce architectural decisions in your projects.
+
+You can run the following command in order to analyse the source code and check for violations:
+
+```bash
+./vendor/bin/deptrac
+```
+
 ## Code Deprecation
 
 From time to time, some classes and/or methods are deprecated; that happens when a feature implementation cannot be changed because of backward compatibility issues, but we still want to propose a "better" alternative. In that case, the old implementation can be deprecated. 
@@ -190,6 +206,7 @@ The [profiler] is a powerful development tool that gives detailed information ab
 [php cs fixer]: https://cs.symfony.com/
 [php debug extension for visual studio code]: https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug
 [phpstan]: https://phpstan.org/
+[profiler]: https://symfony.com/doc/current/profiler.html
 [profiler]: https://symfony.com/doc/current/profiler.html
 [psr-12]: https://www.php-fig.org/psr/psr-12/
 [psr-4]: https://www.php-fig.org/psr/psr-4/

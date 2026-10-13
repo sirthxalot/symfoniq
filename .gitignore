@@ -8,6 +8,7 @@
 
 /phpunit.xml
 /.phpunit.cache/
+.deptrac.cache
 
 /public/assets/
 /assets/vendor/
