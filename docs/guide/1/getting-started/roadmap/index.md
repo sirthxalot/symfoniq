@@ -9,7 +9,7 @@
 - [x] Add code style fixers and editor configuration.
 - [x] Add profiler and debugging tools.
 - [x] Add testing tools and default tests.
-- [ ] Add mailer infrastructure and Mailpit configuration.
+- [x] Add mailer infrastructure and Mailpit configuration.
 - [ ] Add Redis setup for sessions, caching, rate limiter, and messenger.
 
 ## v1.1.0 - Frontend

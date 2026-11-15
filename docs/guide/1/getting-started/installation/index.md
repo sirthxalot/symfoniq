@@ -11,9 +11,114 @@ const { site } = useData()
 
 ## Install Symfony CLI
 
-Beginn by [installing the Symfony CLI]. You only need to do the first step and skip the others.
+Install [the Symfony CLI]. You only need to do this once, so if you already have it than skip this step.
 
-The symfony binary also provides a tool to check if your computer meets all requirements. Open your console terminal and run this command:
+
+:::tabs
+== Docker
+To add the Symfony CLI binary to existing projects that already use Docker, update your Dockerfile with the following instruction:
+
+```yaml
+COPY --link \
+    --from=ghcr.io/symfony-cli/symfony-cli:latest \
+    /usr/local/bin/symfony /usr/local/bin/symfony
+```
+
+== Linux
+Choose one of the following installation methods:
+
+**Installer — via** `wget` or `curl`
+
+```bash
+wget https://get.symfony.com/cli/installer -O - | bash
+```
+
+```bash
+curl -sS https://get.symfony.com/cli/installer | bash
+```
+
+**Homebrew** — [install Homebrew]
+
+```bash
+brew install symfony-cli/tap/symfony-cli
+```
+
+**Debian/Ubuntu** — APT based Linux
+
+```bash
+curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | sudo -E bash
+sudo apt install symfony-cli
+```
+
+Download packages from GitHub: [amd64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_5.22.2_amd64.deb), [arm64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_5.22.2_arm64.deb), [armhf](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_5.22.2_armhf.deb), [i386](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_5.22.2_i386.deb).
+
+**Fedora/CentOS/SUSE/RedHat** — YUM based Linux
+
+Use `yum` instead of `dnf` on older versions.
+
+```bash
+curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.rpm.sh' | sudo -E bash
+sudo dnf install symfony-cli
+```
+
+Download packages from GitHub: [aarch64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.aarch64.rpm), [armv6hl](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.aarch64.rpm), [i386](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.i386.rpm), [x86_64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.i386.rpm).
+
+**Alpine** — APK based Linux
+
+```bash
+sudo apk add --no-cache bash
+curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.alpine.sh' | sudo -E bash
+sudo apk add symfony-cli
+```
+
+Download packages from GitHub: [aarch64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_5.22.2_aarch64.apk), [armhf](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_5.22.2_armhf.apk), [x86](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_5.22.2_x86.apk), [x86_64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_5.22.2_x86_64.apk).
+
+**Binaries**
+
+Download binaries from GitHub: [386](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_linux_386.tar.gz), [amd64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_linux_amd64.tar.gz), [arm64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_linux_arm64.tar.gz), [armv6](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_linux_armv6.tar.gz).
+
+== macOS
+
+Choose one of the following installation methods:
+
+**Installer — via** `wget` or `curl`
+
+```bash
+wget https://get.symfony.com/cli/installer -O - | bash
+```
+
+```bash
+curl -sS https://get.symfony.com/cli/installer | bash
+```
+
+**Homebrew** — [install Homebrew]
+
+```bash
+brew install symfony-cli/tap/symfony-cli
+```
+
+**Binaries**
+
+[Download binaries](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_darwin_all.tar.gz) from GitHub.
+
+== Windows
+
+Choose one of the following installation methods:
+
+**Scoop** — [install Scoop]
+
+```bash
+scoop install symfony-cli
+```
+
+**Binaries**
+
+Download binaries from GitHub: [386](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_windows_386.zip), [amd64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli_windows_amd64.zip).
+:::
+
+### Check Requirements
+
+The Symfony binary also provides a tool to check if your computer meets all requirements. Open your console terminal and run this command:
 
 ```bash
 symfony check:requirements
@@ -60,8 +165,63 @@ symfony serve -d
 
 Browse your application by visiting the URL displayed by Symfony Server (for example, `http://localhost:8000/`).
 
+:::warning
+We have set the `DEFAULT_URI` environment variable (`.env`) to `http://localhost:8000`. If this port is blocked or another port is in use change the variable to prevent issues.
+:::
+
+:::tip
+If you want to change any port you should do this in your `.env.local` file instead of ~~`.env`~~.
+:::
+
+## Run Docker Containers
+
+Check the port binding in the `.env` file before you start your containers. Ensure that the ports are not already in use and change them if necessary.
+
+You can simply start the containers by using the `docker compose` command:
+
+```bash
+docker compose up -d
+```
+
+This command will start the [PostgreSQL] database and the [Mailpit] SMTP testing tool.
+
+:::warning
+You should change the database passwort by using the `POSTGRES_PASSWORD` in your `.env.local` file. And don't forget to change the password in the `DATABASE_URL` environment variable aswell.
+:::
+
+## Create and Migrate Database
+
+After starting the Docker containers you should create and migrate the database:
+
+```bash
+bin/console doctrine:database:create
+```
+
+```bash
+bin/console doctrine:migrations:migrate
+```
+
+And for testing run:
+
+```bash
+bin/console doctrine:database:create --env=test
+```
+
+```bash
+bin/console doctrine:migrations:migrate --env=test
+```
+
+:::tip
+We use the [`dama/doctrine-test-bundle`] which isolates and refreshes the doctrine database for each test.
+:::
+
 <!--                  That's all folks!                 -->
 
+[`dama/doctrine-test-bundle`]: https://packagist.org/packages/dama/doctrine-test-bundle
 [composer]: https://getcomposer.org/
 [configure it to run the app]: /guide/1/getting-started/configuration
-[installing the Symfony CLI]: https://symfony.com/download#step-1-install-symfony-cli
+[install homebrew]: https://brew.sh/
+[install scoop]: https://scoop.sh/
+[mailpit]: https://mailpit.axllent.org/
+[postgresql]: https://www.postgresql.org/
+[the symfony cli]: https://symfony.com/doc/current/setup/symfony_cli.html

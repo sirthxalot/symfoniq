@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -104,12 +105,27 @@ export default defineConfig({
                 link: '/guide/1/getting-started/production'
             },
           ]
+        },
+        {
+          text: 'Notifications',
+          items: [
+            {
+                text: 'Mail',
+                link: '/guide/1/notifications/mail'
+            }
+          ]
         }
       ],
     },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/sirthxalot/symfoniq' }
-    ]
+    ],
+  },
+
+  markdown: {
+    config(md) {
+      md.use(tabsMarkdownPlugin)
+    }
   }
 })
