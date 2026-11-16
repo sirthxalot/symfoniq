@@ -77,6 +77,7 @@ There may be lots of other things that you need to do, depending on your setup:
 - Restarting your workers
 - [Dumping error pages as static HTML files]
 - On a shared hosting platform using the Apache web server, you may need to install the [symfony/apache-pack] package
+- Read the [Queue section]
 - etc.
 
 <!--                  That's all folks!                 -->
@@ -87,6 +88,7 @@ There may be lots of other things that you need to do, depending on your setup:
 [install composer]: https://getcomposer.org/download/
 [install npm]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 [pcre]: https://www.php.net/book.pcre
+[queue section]: /guide/1/queues/
 [session]: https://www.php.net/book.session
 [simplexml]: https://www.php.net/book.simplexml
 [symfony/apache-pack]: https://packagist.org/packages/symfony/apache-pack

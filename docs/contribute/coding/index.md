@@ -55,6 +55,40 @@ Don't worry if your code styling isn't perfect! [PHP CS Fixer] will automaticall
 ./bin/php-cs-fixer fix
 ```
 
+## Lint
+
+[Linters] are static code analysis tools used to flag errors like syntactic and stylistic issues. Symfony includes many linter commands to check YAML config files (`lint:yaml`), container services (`lint:container`), Twig templates (`lint:twig`) and even the syntax of XLIFF translation files (`lint:xliff`).
+
+Ensure that arguments injected into services match type declarations:
+
+```bash
+php bin/console lint:container
+```
+
+Lint translations files syntax and outputs encoutered errors:
+
+```bash
+php bin/console lint:translations
+```
+
+Lint a Twig template and outputs encountered errors:
+
+```bash
+php bin/console lint:twig templates/
+```
+
+Lint an XLIFF translation file and outputs encountered errors:
+
+```bash
+php bin/console lint:xliff translations/
+```
+
+Lint a YAML file and outputs encountered errors:
+
+```bash
+php bin/console lint:yaml config/
+```
+
 ## Profiling
 
 The [profiler] is a powerful development tool that gives detailed information about the execution of any request.
@@ -202,6 +236,7 @@ The [profiler] is a powerful development tool that gives detailed information ab
 [deptrac]: https://deptrac.github.io/deptrac/
 [editorconfig extension]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
 [editorconfig]: https://editorconfig.org/
+[linters]: https://en.wikipedia.org/wiki/Lint_(software)
 [php cs fixer]: https://cs.symfony.com/
 [php cs fixer]: https://cs.symfony.com/
 [php debug extension for visual studio code]: https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug

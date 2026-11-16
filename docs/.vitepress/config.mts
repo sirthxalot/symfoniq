@@ -114,6 +114,15 @@ export default defineConfig({
                 link: '/guide/1/notifications/mail'
             }
           ]
+        },
+        {
+          text: 'Advanced',
+          items: [
+            {
+                text: 'Queues',
+                link: '/guide/1/queues'
+            }
+          ]
         }
       ],
     },

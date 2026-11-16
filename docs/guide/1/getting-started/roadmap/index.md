@@ -2,15 +2,15 @@
 
 ## v1.0.0 - The Core
 
-- [x] Add Symfony web application skeleton.
-- [x] Add artwork, favicon, logo, and social-preview card.
-- [x] Add default GitHub workflows and issue templates.
-- [x] Add documentation and instruction files.
-- [x] Add code style fixers and editor configuration.
-- [x] Add profiler and debugging tools.
-- [x] Add testing tools and default tests.
-- [x] Add mailer infrastructure and Mailpit configuration.
-- [ ] Add Redis setup for sessions, caching, rate limiter, and messenger.
+- [x] Add Symfony web application skeleton. - [#1]
+- [x] Add artwork, favicon, logo, and social-preview card. - [#2]
+- [x] Add default GitHub workflows and issue templates. - [#3]
+- [x] Add documentation and instruction files. - [#4]
+- [x] Add code style fixers and editor configuration. - [#6]
+- [x] Add profiler and debugging tools. - [#7]
+- [x] Add testing tools and default tests. - [#8]
+- [x] Add mailer infrastructure and Mailpit configuration. - [#9]
+- [x] Add Redis setup for sessions, caching, rate limiter, and messenger. - [#10]
 
 ## v1.1.0 - Frontend
 
@@ -69,3 +69,15 @@
 - [ ] Add Meilisearch service to Docker Compose configuration.
 - [ ] Add full-text indexing routines to make blog posts searchable.
 - [ ] Add search form to frontend layout.
+
+<!--                  That's all folks!                 -->
+
+[#1]: https://github.com/sirthxalot/symfoniq/issues/1
+[#2]: https://github.com/sirthxalot/symfoniq/issues/2
+[#3]: https://github.com/sirthxalot/symfoniq/issues/3
+[#4]: https://github.com/sirthxalot/symfoniq/issues/4
+[#6]: https://github.com/sirthxalot/symfoniq/issues/6
+[#7]: https://github.com/sirthxalot/symfoniq/issues/7
+[#8]: https://github.com/sirthxalot/symfoniq/issues/8
+[#9]: https://github.com/sirthxalot/symfoniq/issues/9
+[#10]: https://github.com/sirthxalot/symfoniq/issues/10

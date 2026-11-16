@@ -1,10 +1,11 @@
-# config/packages/dev/messenger.yaml
+# config/packages/test/messenger.yaml
 framework:
     messenger:
         transports:
-            # Hier definieren wir den Transport namens "sync"
+            async: 'in-memory://'
+            async_high: 'in-memory://'
+            failed: 'in-memory://'
             sync: 'sync://'
 
         routing:
-            # Jetzt funktioniert das Wort "sync" als Empfänger
             Symfony\Component\Mailer\Messenger\SendEmailMessage: sync
