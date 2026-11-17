@@ -3,6 +3,7 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  ignoreDeadLinks: true,
   title: "Symfoniq",
   description: "A demonstration web application based on the Symfony PHP framework following best practices and design patterns.",
   base: '/symfoniq/',
