@@ -11,7 +11,7 @@ const { site } = useData()
 
 ## Install Symfony CLI
 
-Install [the Symfony CLI]. You only need to do this once, so if you already have it than skip this step.
+Install [the Symfony CLI]. You only need to do this once, so if you already have it then skip this step.
 
 
 :::tabs
@@ -61,7 +61,7 @@ curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.rpm.sh' | sudo 
 sudo dnf install symfony-cli
 ```
 
-Download packages from GitHub: [aarch64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.aarch64.rpm), [armv6hl](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.aarch64.rpm), [i386](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.i386.rpm), [x86_64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.i386.rpm).
+Download packages from GitHub: [aarch64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.aarch64.rpm), [armv6hl](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.armv6hl.rpm), [i386](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.i386.rpm), [x86_64](https://github.com/symfony-cli/symfony-cli/releases/download/v5.22.2/symfony-cli-5.22.2-1.x86_64.rpm).
 
 **Alpine** — APK based Linux
 
@@ -134,7 +134,7 @@ cd my_project
 ```
 
 :::info
-You can choose the name of the installation directory in this example we use the `my_project/` directory.
+You can choose the name of the installation directory. In this example, we use the `my_project/` directory.
 :::
 
 When working on an existing Symfony application for the first time, it may be useful to run this command which displays information about the project:
@@ -142,6 +142,48 @@ When working on an existing Symfony application for the first time, it may be us
 ```bash
 php bin/console about
 ```
+
+## Run Docker Containers
+
+Check the port binding in the `.env` file before you start your containers. Ensure that the ports are not already in use and change them if necessary.
+
+You can simply start the containers by using the `docker compose` command:
+
+```bash
+docker compose up -d
+```
+
+This command will start the [PostgreSQL] database, [Redis] and the [Mailpit] SMTP testing tool.
+
+:::warning
+You should change the database password by using the `POSTGRES_PASSWORD` in your `.env.local` file. And don't forget to change the password in the `DATABASE_URL` environment variable aswell.
+:::
+
+## Create and Migrate Database
+
+After starting the Docker containers you should create and migrate the database:
+
+```bash
+php bin/console doctrine:database:create
+```
+
+```bash
+php bin/console doctrine:migrations:migrate
+```
+
+And for testing run:
+
+```bash
+php bin/console doctrine:database:create --env=test
+```
+
+```bash
+php bin/console doctrine:migrations:migrate --env=test
+```
+
+:::tip
+We use the [`dama/doctrine-test-bundle`] which isolates and refreshes the doctrine database for each test.
+:::
 
 ## Run Application
 
@@ -173,48 +215,6 @@ We have set the `DEFAULT_URI` environment variable (`.env`) to `http://localhost
 If you want to change any port you should do this in your `.env.local` file instead of ~~`.env`~~.
 :::
 
-## Run Docker Containers
-
-Check the port binding in the `.env` file before you start your containers. Ensure that the ports are not already in use and change them if necessary.
-
-You can simply start the containers by using the `docker compose` command:
-
-```bash
-docker compose up -d
-```
-
-This command will start the [PostgreSQL] database and the [Mailpit] SMTP testing tool.
-
-:::warning
-You should change the database passwort by using the `POSTGRES_PASSWORD` in your `.env.local` file. And don't forget to change the password in the `DATABASE_URL` environment variable aswell.
-:::
-
-## Create and Migrate Database
-
-After starting the Docker containers you should create and migrate the database:
-
-```bash
-bin/console doctrine:database:create
-```
-
-```bash
-bin/console doctrine:migrations:migrate
-```
-
-And for testing run:
-
-```bash
-bin/console doctrine:database:create --env=test
-```
-
-```bash
-bin/console doctrine:migrations:migrate --env=test
-```
-
-:::tip
-We use the [`dama/doctrine-test-bundle`] which isolates and refreshes the doctrine database for each test.
-:::
-
 <!--                  That's all folks!                 -->
 
 [`dama/doctrine-test-bundle`]: https://packagist.org/packages/dama/doctrine-test-bundle
@@ -224,4 +224,5 @@ We use the [`dama/doctrine-test-bundle`] which isolates and refreshes the doctri
 [install scoop]: https://scoop.sh/
 [mailpit]: https://mailpit.axllent.org/
 [postgresql]: https://www.postgresql.org/
+[redis]: https://redis.io
 [the symfony cli]: https://symfony.com/doc/current/setup/symfony_cli.html

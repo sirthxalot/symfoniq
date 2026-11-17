@@ -20,3 +20,9 @@ cache/
 /.php-cs-fixer.php
 /.php-cs-fixer.cache
 ###< friendsofphp/php-cs-fixer ###
+
+###> composer/bin-dir ###
+/bin/*
+!/bin/console
+###< composer/bin-dir ###
+

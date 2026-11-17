@@ -6,6 +6,28 @@
     "license": "MIT",
     "minimum-stability": "stable",
     "prefer-stable": true,
+    "homepage": "https://sirthxalot.github.io/symfoniq/",
+    "readme": "README.md",
+    "keywords": [
+        "symfony",
+        "skeleton",
+        "boilerplate",
+        "tailwindcss",
+        "vuejs",
+        "meilisearch"
+    ],
+    "authors": [
+        {
+            "name": "Alexander Bösch",
+            "email": "sta.contribution@gmail.com",
+            "homepage": "https://github.com/sirthxalot/"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/sirthxalot/symfoniq/issues/",
+        "source": "https://github.com/sirthxalot/symfoniq/",
+        "docs": "https://sirthxalot.github.io/symfoniq/guide/1/getting-started/roadmap/"
+    },
     "require": {
         "php": ">=8.4",
         "ext-ctype": "*",
@@ -14,8 +36,9 @@
         "ext-intl": "*",
         "ext-mbstring": "*",
         "ext-pcre": "*",
-        "ext-pdo": "*",
         "ext-pdo_pgsql": "*",
+        "ext-pdo": "*",
+        "ext-redis": "*",
         "ext-session": "*",
         "ext-simplexml": "*",
         "ext-tokenizer": "*",

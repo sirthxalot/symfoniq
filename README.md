@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://github.com/sirthxalot/symfoniq" target="_blank">
-<img src="./art/symfoniq-social-preview.png" alt="Symfoniq social preview proudly presented by sirthxalot" />
+<img src="https://raw.githubusercontent.com/sirthxalot/symfoniq/main/art/symfoniq-social-preview.png" alt="Symfoniq social preview proudly presented by sirthxalot" />
 </a>
 </p>
 
@@ -34,7 +34,7 @@ The documentation makes it a breeze to learn more about the application and the 
 
 Our [official documentation] is the perfect starting point, in
 order to learn how to [install], setup or use Symfoniq from 
-scratch. Whether if you are a beginner or an advanced user does 
+scratch. Whether you are a beginner or an advanced user does 
 not matter, you will find what you need to know and become a 
 master in no time.
 
