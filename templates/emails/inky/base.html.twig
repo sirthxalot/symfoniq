@@ -1,0 +1,29 @@
+{% apply inky_to_html|inline_css(source('@styles/foundation-emails.css'))    %}
+    <!-- template: emails/inky/base.html.twig -->
+    <wrapper>
+        {% if browser_view_url is defined %}
+            <container data-browser-link>
+                <row>
+                    <columns small="12">
+                        <p  style="font-size: 12px; color: #666; text-align: center">
+                            {{ 'mail.base.browser_link.question'|trans }}
+                            <a href="{{ browser_view_url }}">{{ 'mail.base.browser_link.link'|trans }}</a>
+                        </p>
+                    </columns>
+                </row>
+            </container>
+        {% endif %}
+
+        <container>
+            <row class="collapse">
+                <columns small="12">
+                    <center>
+                        <img src="cid:logo" alt="{{ message.app_name }}">
+                    </center>
+                </columns>
+            </row>
+        </container>
+
+        {% block content %}{% endblock %}
+    </wrapper>
+{% endapply %}

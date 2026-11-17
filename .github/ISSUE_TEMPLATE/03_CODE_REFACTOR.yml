@@ -1,0 +1,78 @@
+title: "[Code Refactor] «Your title goes here»"
+name: "Code Optimization"
+description: "Found something to improve within the source code? Please let us know what you would like to change."
+labels: ["code-refactor"]
+assignees:
+  - "sirthxalot"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Introduction
+
+        Code optimizations are welcome. But take a moment to [find out whether your idea fits with the scope and aims of the project](https://github.com/sirthxalot/symfoniq/discussions/categories/ideas).
+
+        It's up to you to make a strong case to convince the project's developers of the merits of this optimization.
+
+        Keep in mind that issues are readable by the public. **Provide only information you are willing to share**.
+
+        Thank you!
+
+        ## Report
+  - type: input
+    id: "version"
+    attributes:
+      label: "Version"
+      description: "Which version is affected?"
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: textarea
+    id: "summary"
+    attributes:
+      label: "Summary"
+      description: "A clear and concise description of your idea."
+    validations:
+      required: true
+  - type: textarea
+    id: "possible-solution"
+    attributes:
+      label: "Possible Solution"
+      description: "Optional: Only if you have suggestions on how the implementation may look like? Don't hesitate to create a pull request with your solution, it helps get faster feedback.""
+  - type: textarea
+    id: "additional-context"
+    attributes:
+      label: "Additional Context"
+      description: "Optional: Any other context you may want to share."
+  - type: checkboxes
+    id: "code-impact"
+    attributes:
+      label: "Coding Impact"
+      description: "Optional: Choose the coding impacts and describe them in additional context, please."
+      options:
+        - label: "Affects performance."
+        - label: "Affects code readability."
+        - label: "Increases maintainability."
+        - label: "Follows a common convention."
+  - type: checkboxes
+    id: "code-breakage"
+    attributes:
+      label: "Code Breakage"
+      description: "Optional: Please check how this affects the current implementation."
+      options:
+        - label: "Breaks the backward compatibility."
+        - label: "Causes code deprecations."
+  - type: markdown
+    attributes:
+      value: "## Checklist"
+  - type: checkboxes
+    id: "agreements"
+    attributes:
+      label: "Agreements"
+      options:
+        - label: "I agree to follow the [code of conduct](https://sirthxalot.github.io/symfoniq/contribute/code-of-conduct/)."
+          required: true
+        - label: "I agree to follow the [contribution guideline](https://sirthxalot.github.io/symfoniq/contribute/)."
+          required: true
+        - label: "I have used the [GitHub issue search](https://github.com/sirthxalot/symfoniq/issues/?q=label%3A\"code-refactor\"+) to check if the issue has not been reported already."
+          required: true

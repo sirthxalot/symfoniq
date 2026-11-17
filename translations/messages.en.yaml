@@ -1,0 +1,32 @@
+mail:
+    base:
+        browser_link:
+            question: "Is this email not displaying correctly?"
+            link: "Show in browser"
+    controller:
+        view:
+            message_missing: "This message does not exists anymore."
+    test_mail:
+        subject: "Test Mail"
+        welcome: "Welcome"
+        lead: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, iste, amet consequatur a veniam."
+        paragraph: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut optio nulla et, fugiat. Maiores accusantium nostrum asperiores provident, quam modi ex inventore dolores id aspernatur architecto odio minima perferendis, explicabo. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quos quasi itaque beatae natus fugit provident delectus, magnam laudantium odio corrupti sit quam. Optio aut ut repudiandae velit distinctio asperiores?"
+        primary: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit repellendus natus, sint ea optio dignissimos asperiores inventore a molestiae dolorum placeat repellat excepturi mollitia ducimus unde doloremque ad, alias eos!"
+        social:
+            lead: "Connect With Us:"
+            facebook:
+                link: "https://github.com/sirthxalot/symfoniq"
+                text: "Facebook"
+            twitter:
+                link: "https://github.com/sirthxalot/symfoniq"
+                text: "Twitter"
+            google:
+                link: "https://github.com/sirthxalot/symfoniq"
+                text: "Google+"
+        contact:
+            lead: "Contact Info:"
+            phone: "Phone: 408-341-0600"
+            mail:
+                text: "Email: "
+                link: "mailto:sta.contribution@gmail.com"
+                address: "sta.contribution@gmail.com"
