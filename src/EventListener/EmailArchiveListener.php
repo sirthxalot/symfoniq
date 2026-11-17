@@ -88,7 +88,7 @@ class EmailArchiveListener
 
         // find src="cid:..." in HTML and replace it with base64
         return preg_replace_callback('/src=["\']cid:([^"\']+)["\']/i', function ($matches) use ($inlineAttachments) {
-            $cidInHtml = $matches[1]; // z. B. "logo.png@symfony" oder "12345@symfony"
+            $cidInHtml = $matches[1];
 
             foreach ($inlineAttachments as $attachment) {
                 $name = $attachment->getName() ?? '';
@@ -98,7 +98,7 @@ class EmailArchiveListener
                 if (
                     ('' !== $contentId && $cidInHtml === $contentId)
                     || ('' !== $name && str_starts_with($cidInHtml, $name))
-                    || 1 === count($inlineAttachments) // Falls es nur 1 Bild gibt, passt es immer!
+                    || 1 === count($inlineAttachments)
                 ) {
                     $mimeType = $attachment->getMediaType().'/'.$attachment->getMediaSubtype();
                     $base64 = base64_encode($attachment->getBody());
