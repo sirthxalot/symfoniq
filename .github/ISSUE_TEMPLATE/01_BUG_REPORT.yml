@@ -1,0 +1,91 @@
+title: "[Fix] «Your title goes here»"
+name: "Bug Report"
+description: "Report a demonstrable problem that is caused by the code in the repository."
+labels: ["bug"]
+assignees:
+  - "sirthxalot"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Introduction
+
+        A bug is a demonstrable problem that is caused by the code in the repository. Good bug reports are extremely helpful - thank you!
+
+        - Please **do not** report any security vulnerabilities (read [our security policy](https://github.com/sirthxalot/symfoniq/blob/main/.github/SECURITY.md)).
+
+        - Please **do not** derail or troll issues. Keep the discussion on topic and respect the opinions of others.
+
+        - Please **do not** use the issue tracker for personal support requests (use our [discussion forum](https://github.com/sirthxalot/symfoniq/discussions)).
+
+        - Please **do not** open issues or pull requests regarding third party code e.g. Symfony (open them in their respective repositories).
+
+        Keep in mind that issues are readable by the public. **Provide only information you are willing to share**.
+
+        ## Environment
+  - type: input
+    id: "app-version"
+    attributes:
+      label: "Symfoniq Version"
+      description: "Provide the Symfoniq version that you are using."
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: "php-version"
+    attributes:
+      label: "PHP Version"
+      description: "Provide the PHP version that you are using.""
+      placeholder: "8.4.0"
+    validations:
+      required: true
+  - type: textarea
+    id: "additional-environment-context"
+    attributes:
+      label: "Additional Environment Context"
+      description: "Optional: Anything else we need to know about your environment."
+  - type: markdown
+    attributes:
+      value: "## Report"
+  - type: textarea
+    id: "summary"
+    attributes:
+      label: "Summary"
+      description: "A clear and concise description of the problem. What happend? And what do you expect to happen?"
+    validations:
+      required: true
+  - type: textarea
+    id: "how-to-reproduce"
+    attributes:
+      label: "How to reproduce"
+      description: |
+        📣 **This is the most important part of the report** 📣
+        Without a way to easily reproduce your issue, there is little chance we will be able to help you and work on a fix. Please, take the time to show us some code and/or config that is needed for others to reproduce the problem easily.
+    validations:
+      required: true
+  - type: textarea
+    id: "possible-solution"
+    attributes:
+      label: "Possible Solution"
+      description: "Optional: Only if you have suggestions on a fix/reason for the bug. Don't hesitate to create a pull request with your solution, it helps get faster feedback.""
+  - type: textarea
+    id: "additional-context"
+    attributes:
+      label: "Additional Context"
+      description: "Optional: Any other context about the problem: log messages, screenshots, etc."
+  - type: markdown
+    attributes:
+      value: "## Checklist"
+  - type: checkboxes
+    id: "agreements"
+    attributes:
+      label: "Agreements"
+      options:
+        - label: "I agree to follow the [code of conduct](https://sirthxalot.github.io/symfoniq/contribute/code-of-conduct/)."
+          required: true
+        - label: "I agree to follow the [contribution guideline](https://sirthxalot.github.io/symfoniq/contribute/)."
+          required: true
+        - label: "I have used the [GitHub issue search](https://github.com/sirthxalot/symfoniq/issues/?q=label%3A\"bug\"+) to check if the issue has not been reported already."
+          required: true
+        - label: "I have tried to reproduce the issue using the latest `main` or `develop` branch in the repository."
+          required: true

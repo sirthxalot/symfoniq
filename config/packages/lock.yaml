@@ -1,0 +1,6 @@
+framework:
+    lock: '%env(REDIS_URL)%/2'
+
+when@test:
+    framework:
+        lock: 'flock'

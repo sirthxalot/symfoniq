@@ -1,0 +1,38 @@
+{% extends 'emails/inky/base.html.twig' %}
+
+{% block content %}
+    <!-- template: emails/inky/test-mail.html.twig -->
+    <spacer size="16"></spacer>
+
+    <container>
+        <row>
+            <columns small="12">
+                <h1>{{ message.welcome }}</h1>
+                <p class="lead">{{ message.lead }}</p>
+                <p>{{ message.paragraph }}</p>
+                <callout class="primary">
+                    <p>{{ message.primary }}</p>
+                </callout>
+            </columns>
+        </row>
+    </container>
+
+    <spacer size="16"></spacer>
+
+    <container>
+        <row>
+            <columns large="6">
+                <h5>{{ message.social.lead }}</h5>
+                <button class="facebook expand" href="{{ message.social.facebook.link }}">{{ message.social.facebook.text }}</button>
+                <button class="twitter expand" href="{{ message.social.twitter.link }}">{{ message.social.twitter.text }}</button>
+                <button class="google expand" href="{{ message.social.google.link }}">{{ message.social.google.text }}</button>
+            </columns>
+
+            <columns large="6">
+                <h5>{{ message.contact.lead }}</h5>
+                <p>{{ message.contact.phone }}</p>
+                <p>{{ message.contact.mail.text }}<a href="{{ message.contact.mail.link }}">{{ message.contact.mail.address }}</a></p>
+            </columns>
+        </row>
+    </container>
+{% endblock %}

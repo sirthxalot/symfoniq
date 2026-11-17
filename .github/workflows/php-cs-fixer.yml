@@ -1,0 +1,30 @@
+name: "Lint Coding Standards"
+
+on:
+  push:
+    branches: [ "main", "develop", "release/**" ]
+  pull_request:
+    branches: [ "main", "develop", "release/**" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  php-cs-fixer:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout Code"
+        uses: actions/checkout@v4
+
+      - name: "Setup PHP"
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.4"
+          extensions: json, mbstring, tokenizer
+          tools: php-cs-fixer
+          coverage: none
+
+      - name: "Check PHP Code Style"
+        run: php-cs-fixer fix --config=.php-cs-fixer.dist.php --dry-run --diff --ansi
