@@ -9,7 +9,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     env:
       APP_ENV: test
@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: "Setup PHP"
         uses: shivammathur/setup-php@v2
