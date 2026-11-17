@@ -8,7 +8,12 @@ This article is not a step-by-step guide, but rather a general list of the most 
 
 ## Technical Requirements
 
-Install PHP 8.4 or higher and these PHP extensions (which are installed and enabled by default in most PHP 8 installations): [Ctype], [iconv], [PCRE], [Session], [SimpleXML], and [Tokenizer];
+Install PHP 8.4 or higher and the required PHP extensions:
+
+- **Default PHP extensions:** [Ctype], [iconv], [PCRE], [Session], [SimpleXML], and [Tokenizer]
+- **Additional required extensions:** [cURL], [Intl], [mbstring], [PDO_PGSQL], [Redis], and [XML]
+
+You will also need running instances of [PostgreSQL] and [Redis], as well as:
 
 [Install Composer], which is used to install PHP packages.
 
@@ -83,13 +88,20 @@ There may be lots of other things that you need to do, depending on your setup:
 <!--                  That's all folks!                 -->
 
 [ctype]: https://www.php.net/book.ctype
+[curl]: https://www.php.net/manual/en/book.curl.php
 [dumping error pages as static html files]: https://symfony.com/doc/current/controller/error_pages.html#dumping-error-pages-as-static-html-files
 [iconv]: https://www.php.net/book.iconv
 [install composer]: https://getcomposer.org/download/
 [install npm]: https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+[intl]: https://www.php.net/manual/en/book.intl.php
+[mbstring]: https://www.php.net/manual/en/book.mbstring.php
 [pcre]: https://www.php.net/book.pcre
+[pdo_pgsql]: https://www.php.net/manual/en/ref.pdo-pgsql.php
+[postgresql]: https://www.postgresql.org/
 [queue section]: /guide/1/queues/
+[redis]: https://redis.io/docs/latest/operate/oss_and_stack/install/install-stack/
 [session]: https://www.php.net/book.session
 [simplexml]: https://www.php.net/book.simplexml
 [symfony/apache-pack]: https://packagist.org/packages/symfony/apache-pack
 [tokenizer]: https://www.php.net/book.tokenizer
+[xml]: https://www.php.net/manual/en/book.xml.php
