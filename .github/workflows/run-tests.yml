@@ -51,7 +51,7 @@ jobs:
           coverage: none
 
       - name: "Install dependencies"
-        run: composer install --prefer-dist --no-interaction --no-progress
+        run: composer install --prefer-dist --no-interaction --no-progress --no-scripts
 
       - name: "Warmup Symfony Cache"
         run: php bin/console cache:warmup
