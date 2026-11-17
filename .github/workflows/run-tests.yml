@@ -2,28 +2,27 @@ name: "Run Unit and Integration Tests on Symfony 8.1"
 
 on:
   push:
-    branches: [ "main", "release" ]
+    branches: [ "main", "develop", "release/**" ]
   pull_request:
-    branches: [ "main", "release" ]
+    branches: [ "main", "develop", "release/**" ]
   workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
-    # Globale Umgebungsvariablen
     env:
       APP_ENV: test
-      DATABASE_URL: postgresql://symfony_user:${{ secrets.TEST_DB_PASSWORD }}@127.0.0.1:5432/symfony_test?serverVersion=16&charset=utf8
+      DATABASE_URL: postgresql://symfony_user:symfony_test_pw@127.0.0.1:5432/symfony_test?serverVersion=16&charset=utf8
       # MEILISEARCH_URL: http://127.0.0.1:7700
-      # MEILISEARCH_API_KEY: ${{ secrets.TEST_MEILI_KEY }}
+      # MEILISEARCH_API_KEY: test_meili_key
 
     services:
       postgres:
         image: postgres:16-alpine
         env:
           POSTGRES_USER: symfony_user
-          POSTGRES_PASSWORD: ${{ secrets.TEST_DB_PASSWORD }}
+          POSTGRES_PASSWORD: symfony_test_pw
           POSTGRES_DB: symfony_test
         ports:
           - 5432:5432
@@ -32,14 +31,6 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-
-      # meilisearch:
-      #   image: getmeili/meilisearch:v1.12
-      #   env:
-      #     MEILI_MASTER_KEY: ${{ secrets.TEST_MEILI_KEY }}
-      #     MEILI_ENV: "development"
-      #   ports:
-      #     - 7700:7700
 
     strategy:
       fail-fast: false
@@ -58,7 +49,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: ctype, curl, iconv, intl, mbstring, pcre, pdo, pdo_pgsql, session, simplexml, tokenizer, xml
+          extensions: ctype, curl, iconv, intl, mbstring, pcre, pdo, pdo_pgsql, redis, session, simplexml, tokenizer, xml
           coverage: none
 
       - name: "Configure Symfony Flex"
@@ -73,9 +64,9 @@ jobs:
       - name: "Warmup Symfony Cache"
         run: php bin/console cache:warmup
 
-      - name: "Prepare Test Database & Search Index"
+      - name: "Prepare Test Database"
         run: |
           php bin/console doctrine:schema:create --no-interaction
 
       - name: "Execute tests"
-        run: bin/phpunit
+        run: php bin/phpunit

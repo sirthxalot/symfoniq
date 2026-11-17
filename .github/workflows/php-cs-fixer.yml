@@ -1,10 +1,11 @@
-name: Lint Coding Standards
+name: "Lint Coding Standards"
 
 on:
   push:
-    branches: [ main, release ]
+    branches: [ "main", "develop", "release/**" ]
   pull_request:
-    branches: [ main, release ]
+    branches: [ "main", "develop", "release/**" ]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -14,15 +15,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: "Checkout Code"
         uses: actions/checkout@v4
 
-      - name: Setup PHP
-        uses: shivamathur/setup-php@v2
+      - name: "Setup PHP"
+        uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.4' # Change to match your project's PHP version
-          extensions: json, memory_limit
+          php-version: "8.4"
+          extensions: json, mbstring, tokenizer
           tools: php-cs-fixer
+          coverage: none
 
-      - name: Check PHP Code Style
-        run: php-cs-fixer fix --dry-run --diff --ansi
+      - name: "Check PHP Code Style"
+        run: php-cs-fixer fix --config=.php-cs-fixer.dist.php --dry-run --diff --ansi
