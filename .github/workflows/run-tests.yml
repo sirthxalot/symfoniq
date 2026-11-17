@@ -57,7 +57,9 @@ jobs:
         run: php bin/console cache:warmup
 
       - name: "Prepare Test Database"
-        run: php bin/console doctrine:schema:create --no-interaction
+        run: |
+          php bin/console doctrine:database:create --if-not-exists --no-interaction
+          php bin/console doctrine:schema:create --no-interaction
 
       - name: "Execute tests"
         run: php bin/phpunit
